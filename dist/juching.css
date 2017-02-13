@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'juching';
+  /*src:  url('fonts/juching.eot?jd0ic4');*/
+  src:  url('./juching.eot?jd0ic4#iefix') format('embedded-opentype'),
+    url('./juching.ttf?jd0ic4') format('truetype');
+    /*url('fonts/juching.woff?jd0ic4') format('woff'),*/
+    /*url('fonts/juching.svg?jd0ic4#juching') format('svg');*/
+  font-weight: normal;
+  font-style: normal;
+}
+/*没有eot，忽略了IE*/
+@font-face {font-family: 'juFont';
+    src:url('./BG Ju.ttf') format('truetype');
+  }
+
+.ju-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'juching' !important;
+  /*font-size:25px;*/
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.1px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-vue {
+  -webkit-text-stroke-width: 1px;
+}
+.icon-search:before {
+  content: "\e660";
+}
+.icon-theme:before {
+  content: "\e631";
+}
+.icon-menu:before {
+  content: "\e62a";
+}
+.icon-pen:before {
+  content: "\e60f";
+}
+.icon-read:before {
+  content: "\e635";
+}
+.icon-top:before {
+  content: "\e648";
+}
+.icon-twitter:before {
+  content: "\e634";
+}
+.icon-github:before {
+  content: "\e637";
+}
+.icon-weibo:before {
+  content: "\e601";
+}
+.icon-Iconfont:before {
+  content: "\343a";
+}
+.icon-mail:before {
+  content: "\e609";
+}
+.icon-hash:before {
+  content: "\efc6";
+}
+.icon-ol:before {
+  content: "\f37f";
+}
+.icon-ul:before {
+  content: "\f380";
+}
+.icon-left-quote:before {
+  content: "\efc7";
+}
+.icon-code:before {
+  content: "\edda";
+}
+.icon-link:before {
+  content: "\ee23";
+}
+.icon-image:before {
+  content: "\ebf8";
+}
+.icon-table:before {
+  content: "\e666";
+}
+.icon-bold:before {
+  content: "\e238";
+}
+.icon-strikethrough:before {
+  content: "\e246";
+}
+.icon-italic:before {
+  content: "\e23f";
+}
+.icon-underlined:before {
+  content: "\e249";
+}
+.icon-done:before {
+  content: "\e903";
+}
+.icon-markdown:before {
+  content: "\f388";
+}
+.icon-right-quote:before {
+  content: "\efc8";
+}
+.icon-left-quote1:before {
+  content: "\efc9";
+}
+.icon-right-quote1:before {
+  content: "\efca";
+}
+.icon-html5:before {
+  content: "\e62e";
+}
+.icon-css3:before {
+  content: "\e65d";
+}
+.icon-js:before {
+  content: "\e695";
+}
+.icon-vue:before {
+  content: "\e63e";
+}
+.icon-more:before {
+  content: "\e640";
+}
+.icon-pen1:before {
+  content: "\e688";
+}
+.icon-pen2:before {
+  content: "\e908";
+}
+.icon-modx:before {
+  content: "\f285";
+}
+.icon-layout:before {
+  content: "\f49e";
+}
+.icon-menu1:before {
+  content: "\e694";
+}
+.icon-arrow-forward:before {
+  content: "\ebf3";
+}
+.icon-arrow-back:before {
+  content: "\ebf4";
+}
+.icon-chat:before {
+  content: "\eb97";
+}
+.icon-chat-1:before {
+  content: "\eb98";
+}
+.icon-chat-2:before {
+  content: "\eb99";
+}
+.icon-chat-3:before {
+  content: "\eb9a";
+}
+.icon-paper-plane:before {
+  content: "\ee46";
+}
+.icon-email:before {
+  content: "\eb9e";
+}
+.icon-twitter1:before {
+  content: "\f081";
+}
+.icon-github1:before {
+  content: "\f113";
+}
+.icon-google-plus:before {
+  content: "\f2b3";
+}
+.icon-taiji:before {
+  content: "\f51b";
+}
+.icon-diamond:before {
+  content: "\f48d";
+}
+.icon-sunglasses:before {
+  content: "\f800";
+}
+.icon-sunglasses2:before {
+  content: "\f801";
+}
+.icon-setting:before {
+  content: "\ef66";
+}
+.icon-hand-pointer:before {
+  content: "\f25a";
+}
+.icon-thumb-up:before {
+  content: "\f087";
+}
+.icon-thumb-down:before {
+  content: "\f088";
+}
+.icon-heart:before {
+  content: "\f08a";
+}
+.icon-search1:before {
+  content: "\f1e5";
+}
+.icon-loading:before {
+  content: "\e105";
+}
+.icon-expand:before {
+  content: "\e110";
+}
+.icon-contract:before {
+  content: "\e111";
+}
+.icon-plus:before {
+  content: "\e114";
+}
+.icon-minus:before {
+  content: "\e115";
+}
+.icon-check:before {
+  content: "\e116";
+}
+.icon-cross:before {
+  content: "\e117";
+}
+.icon-ellipsis:before {
+  content: "\e129";
+}
+.icon-lightbulb:before {
+  content: "\e12c";
+}
+.icon-paintbrush:before {
+  content: "\e132";
+}
+.icon-blog:before {
+  content: "\e641";
+}
+.icon-link2:before {
+  content: "\e005";
+}
+.icon-me:before {
+  content: "\e90b";
+}
+.icon-spinner:before {
+  content: "\f110";
+}
+.icon-calendar:before {
+  content: "\ef68";
+}
+.icon-qrcode:before {
+  content: "\f029";
+}
+.icon-toggle-off:before {
+  content: "\f204";
+}
+.icon-toggle-on:before {
+  content: "\f205";
+}
+.icon-trash:before {
+  content: "\f449";
+}
+.icon-lib:before {
+  content: "\f47b";
+}
+.icon-pig:before {
+  content: "\f4d9";
+}
