@@ -6,7 +6,7 @@
 	symlinks = false
 	ignorecase = true
 [remote "origin"]
-	url = https://Juche:Juching019009@github.com/Juche/juching-blog.git
+	url = https://Juche@github.com/Juche/juching-blog.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin
