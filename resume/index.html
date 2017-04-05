@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="img/favicon_64X64.ico">
+	<title>Juching's Web front-end Resume</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/loading.css">
+	<link rel="stylesheet" href="css/resumeNav.css">
+	<link rel="stylesheet" href="css/cover.css">
+</head>
+
+<body>
+	<div class="container resume">
+		<!-- 目录导航 -->
+		<nav class="resume-nav">
+			<a class="current-nav" href="###">Cover</a>
+			<a href="./static/baseInfo.html">BaseInfo</a>
+			<a href="./static/skill.html">Skill</a>
+			<a href="./static/interfaceGUI.html">GUI</a>
+			<a href="./static/project.html">Project</a>
+		</nav>
+
+		<!-- 打印求职信息盒子 -->
+		<div class="cover-print-words">
+			<audio src="./media/keyboardSound.mp3" autoplay="autoplay" loop="loop">
+			</audio>
+			<p id="cover-print-words">
+			</p>
+			<!-- 我是朱程&nbsp;:<br />&nbsp;&nbsp;『WEB 前端工程师』<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求职中&nbsp;...... -->
+		</div>
+
+		<!-- Loading动画 -->
+		<div class="cover-loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<!-- cursorFollow canvas animation -->
+		<div id="cursor-follow" class="cursor-follow">
+			<canvas id="cursor-follow-canvas"></canvas>
+		</div>
+
+		<!-- bubblesUp canvas animation -->
+		<!-- <div id="bubblesUp" class="bubblesUp">
+		<canvas id="bubblesUpCanvas"></canvas>
+		</div> -->
+
+	</div>
+
+	<!-- cursorFollow canvas animation -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/TweenLite.min.js"></script>
+	<script src="js/EasePack.min.js"></script>
+	<script src="js/bgCanvasDotsFollow.js"></script>
+
+	<!-- bubblesUp canvas animation -->
+	<!-- <script src="js/bgCanvasBubblesUp.js"></script> -->
+
+	<script type="text/javascript">
+		(function() {
+			// 文字逐个出现动画
+			// 我是朱程&nbsp;:<br />&nbsp;&nbsp;『WEB 前端工程师』<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求职中&nbsp;......
+			var pWords = ['我', '是', '朱', '程','&nbsp;:', '<br />&nbsp;', '&nbsp;', '『&nbsp;', 'W', 'E', 'B ', '前', '端', '工', '程', '师', '&nbsp;』', '<br />',
+				'&nbsp;&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;','&nbsp;&nbsp;&nbsp;', '求', '职', '中','&nbsp;', '...', '...'
+			];
+			var len = pWords.length;
+			var p = document.querySelector('#cover-print-words');
+			var i = 0;
+			var timer = setInterval(function() {
+				p.innerHTML += pWords[i];
+				i++;
+				if (i == len) {
+					clearInterval(timer);
+				}
+			}, 200);
+
+
+			// 打字加载完成后后删除loading节点和打字音效
+			setTimeout(function() {
+				$('.cover-loader').remove();
+				$('audio').remove();
+				// IE不支持js的remove方法/用jq的remove来代替
+				// document.querySelector('.cover-loader').remove();
+				// document.querySelector('audio').remove();
+			}, 6200);
+		}());
+	</script>
+</body>
+
+</html>
