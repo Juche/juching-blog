@@ -1,0 +1,351 @@
+/**
+ * 黑色主题
+ * 做成开关灯的效果
+ */
+
+html {
+    background: #222 url(../img/bg/bg06.png);
+}
+
+
+/*整体*/
+
+#slider {
+    height: 400px;
+    width: 70%;
+    position: relative;
+    margin: 120px auto 0;
+    left: 50px;
+}
+
+
+/*技能关键词*/
+
+
+/*关键词盒子*/
+
+#slider .slider-screen .ui-slider-pip {
+    /*border: 1px solid #0f0;*/
+    left: -143px;
+    width: 140px;
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+
+/*关键词标签盒子*/
+
+#slider .slider-screen .ui-slider-pip .ui-slider-label {
+    left: 0px;
+    width: 80px;
+    font-size: 18px;
+    text-align: right;
+}
+
+
+/*修饰的图标*/
+
+.ui-slider-pip::after {
+    font-family: ju-icon;
+    content: "\e12c";
+    font-size: 28px;
+    font-weight: normal;
+    color: #222;
+    margin-left: 90px;
+    position: relative;
+    top: -6px;
+}
+
+
+/*去除关键词前的一个小短线*/
+
+#slider .slider-screen .ui-slider-line {
+    background: none;
+}
+
+
+/*滑块移动区间*/
+
+#slider .slider-screen {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 0%;
+    width: 20px;
+    height: 300px;
+    border: none;
+    background: transparent;
+}
+
+
+/*滑块活动区间延展修饰*/
+
+#slider .slider-self-line {
+    position: relative;
+    top: 29px;
+    left: 0px;
+    z-index: 1;
+    width: 20px;
+    height: 336px;
+    border: none;
+    border-radius: 6px;
+    background: #444;
+    box-shadow: inset 1px 1px #111, inset 2px 2px 15px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(0, 0, 0, 0.6), 0.5px 0.5px #888, 0 0 0 1px #666, 0 0 0 3px #000;
+}
+
+
+/*滑块外观*/
+
+#slider .slider-screen .ui-slider-handle {
+    width: 20px;
+    height: 36px;
+    left: 0px;
+    margin-bottom: -25px;
+    border-radius: 6px;
+    border: 1px solid #222;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #222, #555);
+    text-shadow: 1px 3px 3px #000;
+}
+
+#slider .slider-screen .ui-slider-handle:before {
+    content: "";
+    display: table;
+    width: 19px;
+    height: 5px;
+    position: relative;
+    top: 10px;
+    background: #666;
+    border-top: 0.5px solid #222;
+    border-bottom: 0.5px solid #aaa;
+    transform: skewY(-20deg);
+}
+
+#slider .slider-screen .ui-slider-handle:after {
+    content: "";
+    display: table;
+    width: 19px;
+    height: 5px;
+    position: relative;
+    top: 16px;
+    transform: skewY(-20deg);
+    background: #555;
+    border-top: 0.5px solid #222;
+    border-bottom: 0.5px solid #aaa;
+}
+
+
+/*解决滑槽内点击时不能触发事件监听程序问题/添加盒子覆在其上方/把监听加在.ui-slider-label上*/
+
+.ui-slider-label::after {
+    position: absolute;
+    z-index: 100;
+    left: 140px;
+    top: -25px;
+    width: 25px;
+    height: 75px;
+    content: '';
+    /*background: rgba(255, 0, 0, 0.5);*/
+}
+
+
+/*技能描述盒子*/
+
+.skill-describe {
+    position: absolute;
+    top: 0px;
+    left: 9px;
+    padding: 20px 50px;
+    width: 100%;
+    height: 100%;
+    color: #ccc;
+    border: 2px solid #000;
+    border-radius: 5px 35px;
+}
+
+.skill-describe li {
+    list-style-type: georgian;
+    line-height: 36px;
+}
+
+
+/*@keyframes light-up {
+    to {
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.5), 0 0 3px #fff;
+    }
+}*/
+
+
+/*图标/边框/文字的颜色处理*/
+
+
+/*除去提示位置处的底部边框和icon*/
+
+#slider .slider-screen .ui-slider-pip:nth-child(2) {
+    border-bottom: none;
+}
+
+.ui-slider-pip:nth-child(2)::after {
+    content: "";
+}
+
+
+/*第一个关键词点亮为白色*/
+
+#slider .ui-slider-pip.ui-slider-pip-1.ui-slider-pip-selected {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff;
+}
+
+.ui-slider-pip.ui-slider-pip-1.ui-slider-pip-selected::after {
+    animation: bubble-white 0.15s 3 forwards;
+}
+
+#slider .slider-self-line.white {
+    animation: slide-line-w 0.3s 2 forwards;
+}
+
+@keyframes slide-line-w {
+    to {
+        box-shadow: inset 1px 1px #111, inset 2px 2px 15px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5), 0.5px 0.5px #888, 0px 0px 0 1px #666, 0px 0px 0 3px #fff;
+    }
+}
+
+.skill-describe.white {
+    color: #fff;
+    border-color: #fff;
+}
+
+
+/*第二个关键词点亮为红色*/
+
+
+/*#slider .ui-slider-pip:nth-child(4).ui-slider-pip-selected {*/
+
+#slider .ui-slider-pip.ui-slider-pip-2.ui-slider-pip-selected {
+    color: #f00;
+    border-bottom: 2px solid #f00;
+    text-shadow: 0 0 5px #f00, 0 0 20px #f00;
+}
+
+
+/*.ui-slider-pip:nth-child(4).ui-slider-pip-selected::after {*/
+
+.ui-slider-pip.ui-slider-pip-2.ui-slider-pip-selected::after {
+    animation: bubble-red 0.15s 3 forwards;
+}
+
+#slider .slider-self-line.red {
+    animation: slide-line-r 0.3s 2 forwards;
+}
+
+@keyframes slide-line-r {
+    to {
+        box-shadow: inset 1px 1px #111, inset 2px 2px 15px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5), 0.5px 0.5px #888, 0px 0px 0 1px #666, 0px 0px 0 3px #f00;
+    }
+}
+
+.skill-describe.red {
+    color: #f00;
+    border-color: #f00;
+}
+
+
+/*第三个关键词点亮为绿色*/
+
+
+/*#slider .ui-slider-pip:nth-child(5).ui-slider-pip-selected {*/
+
+#slider .ui-slider-pip.ui-slider-pip-3.ui-slider-pip-selected {
+    color: #0f0;
+    border-bottom: 2px solid #0f0;
+    text-shadow: 0 0 5px #0f0, 0 0 20px #0f0;
+}
+
+
+/*.ui-slider-pip:nth-child(5).ui-slider-pip-selected::after {*/
+
+.ui-slider-pip.ui-slider-pip-3.ui-slider-pip-selected::after {
+    animation: bubble-green 0.15s 3 forwards;
+}
+
+#slider .slider-self-line.green {
+    animation: slide-line-g 0.3s 2 forwards;
+}
+
+@keyframes slide-line-g {
+    to {
+        box-shadow: inset 1px 1px #111, inset 2px 2px 15px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5), 0.5px 0.5px #888, 0px 0px 0 1px #666, 0px 0px 0 3px #0f0;
+    }
+}
+
+.skill-describe.green {
+    color: #0f0;
+    border-color: #0f0;
+}
+
+
+/*第三个关键词点亮为蓝色*/
+
+
+/*#slider .ui-slider-pip:nth-child(6).ui-slider-pip-selected {*/
+
+#slider .ui-slider-pip.ui-slider-pip-4.ui-slider-pip-selected {
+    color: #00f;
+    border-bottom: 2px solid #00f;
+    text-shadow: 0 0 5px #00f, 0 0 20px #00f;
+}
+
+
+/*.ui-slider-pip:nth-child(6).ui-slider-pip-selected::after {*/
+
+.ui-slider-pip.ui-slider-pip-4.ui-slider-pip-selected::after {
+    animation: bubble-blue 0.15s 3 forwards;
+}
+
+#slider .slider-self-line.blue {
+    animation: slide-line-b 0.3s 2 forwards;
+}
+
+@keyframes slide-line-b {
+    to {
+        box-shadow: inset 1px 1px #111, inset 2px 2px 15px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5), 0.5px 0.5px #888, 0px 0px 0 1px #666, 0px 0px 0 3px #00f;
+    }
+}
+
+.skill-describe.blue {
+    color: #00f;
+    border-color: #00f;
+}
+
+
+/*灯泡点亮动画*/
+
+@keyframes bubble-white {
+    to {
+        color: #fff;
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #fff, -0 -0 6px #fff, -0 -0 7px #fff, -0 -0 8px #fff, -0 -0 10px #fff;
+    }
+}
+
+@keyframes bubble-red {
+    to {
+        color: #f00;
+        text-shadow: 0 0 1px #f00, 0 0 2px #f00, 0 0 3px #f00, 0 0 4px #f00, 0 0 5px #f00, -0 -0 6px #f00, -0 -0 7px #f00, -0 -0 8px #f00, -0 -0 10px #f00;
+    }
+}
+
+@keyframes bubble-green {
+    to {
+        color: #0f0;
+        text-shadow: 0 0 1px #0f0, 0 0 2px #0f0, 0 0 3px #0f0, 0 0 4px #0f0, 0 0 5px #0f0, -0 -0 6px #0f0, -0 -0 7px #0f0, -0 -0 8px #0f0, -0 -0 10px #0f0;
+    }
+}
+
+@keyframes bubble-blue {
+    to {
+        color: #00f;
+        text-shadow: 0 0 1px #00f, 0 0 2px #00f, 0 0 3px #00f, 0 0 4px #00f, 0 0 5px #00f, -0 -0 6px #00f, -0 -0 7px #00f, -0 -0 8px #00f, -0 -0 10px #00f;
+    }
+}

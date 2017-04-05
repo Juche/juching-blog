@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="../img/favicon_64X64.ico">
+	<title>Juching's base information</title>
+	<link rel="stylesheet" href="../css/normalize.css" />
+	<link rel="stylesheet" href="../css/resumeNav.css" />
+	<link rel="stylesheet" href="../css/baseInfo.css" />
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<script src="../js/modernizr.custom.79639.js"></script>
+</head>
+
+<body>
+
+	<div class="container resume">
+
+		<nav class="resume-nav">
+			<a href="../index.html">Cover</a>
+			<a class="current-nav" href="###">BaseInfo</a>
+			<a href="./skill.html">Skill</a>
+			<a href="./interfaceGUI.html">GUI</a>
+			<a href="./project.html">Project</a>
+		</nav>
+
+		<div id="slider" class="sl-slider-wrapper">
+
+			<div class="sl-slider">
+
+				<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					<div class="sl-slide-inner">
+						<div class="ju-icon icon-me"></div>
+						<h2>Name: 朱程</h2>
+						<blockquote>
+							<p>The quieter you become, the more you are able to hear.</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+				<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+					<div class="sl-slide-inner">
+						<div class="ju-icon icon-edu"></div>
+						<h2>Edu: 本科</h2>
+						<blockquote>
+							<p>专业：光信息科学与技术</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+				<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+					<div class="sl-slide-inner">
+						<div class="ju-icon icon-tel"></div>
+						<h2>Tel: 18682340981</h2>
+						<blockquote>
+							<p>So call me maybe.</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+				<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+					<div class="sl-slide-inner">
+						<div class="ju-icon icon-email"></div>
+						<h2>Mail: azhucheng1@gmail.com</h2>
+						<blockquote>
+							<p>Click <a href="mailto:azhucheng1@gmail.com">HERE: </a> to send me an Email, I'll be glad to receive your mail.</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+				<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+					<div class="sl-slide-inner">
+						<div class="ju-icon  icon-sunglasses"></div>
+						<h2>Character: </h2>
+						<blockquote>
+							<p>为人随和，积极乐观，适应能力强，兼容性好。</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+				<div class="sl-slide bg-6" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+					<div class="sl-slide-inner">
+						<div class="ju-icon icon-fun"></div>
+						<h2>Intrest: </h2>
+						<blockquote>
+							<p>喜书法，会刻印。爱运动，足球显。无事折腾软件，定制界面。</p><cite></cite></blockquote>
+					</div>
+				</div>
+
+			</div>
+
+
+			<nav id="nav-arrows" class="nav-arrows">
+				<span class="nav-arrow-prev">Previous</span>
+				<span class="nav-arrow-next">Next</span>
+			</nav>
+
+			<nav id="nav-dots" class="nav-dots">
+				<span class="nav-dot-current"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</nav>
+
+		</div>
+
+	</div>
+	<script src="../js/jquery-1.12.3.min.js"></script>
+	<script src="../js/jquery.ba-cond.min.js"></script>
+	<script src="../js/jquery.slitslider.js"></script>
+	<script>
+		$(function() {
+
+			var Page = (function() {
+
+				var $navArrows = $('#nav-arrows'),
+					$nav = $('#nav-dots > span'),
+					slitslider = $('#slider').slitslider({
+						onBeforeChange: function(slide, pos) {
+
+							$nav.removeClass('nav-dot-current');
+							$nav.eq(pos).addClass('nav-dot-current');
+
+						}
+					}),
+
+					init = function() {
+
+						initEvents();
+
+					},
+					initEvents = function() {
+
+						// add navigation events
+						$navArrows.children(':last').on('click', function() {
+
+							slitslider.next();
+							return false;
+
+						});
+
+						$navArrows.children(':first').on('click', function() {
+
+							slitslider.previous();
+							return false;
+
+						});
+
+						$nav.each(function(i) {
+
+							$(this).on('click', function(event) {
+
+								var $dot = $(this);
+
+								if (!slitslider.isActive()) {
+
+									$nav.removeClass('nav-dot-current');
+									$dot.addClass('nav-dot-current');
+
+								}
+
+								slitslider.jump(i + 1);
+								return false;
+
+							});
+
+						});
+
+					};
+
+				return {
+					init: init
+				};
+
+			})();
+
+			Page.init();
+
+		});
+	</script>
+</body>
+
+</html>

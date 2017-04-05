@@ -1,0 +1,113 @@
+.project-items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-item {
+    flex: 1;
+    position: relative;
+    perspective: 1000px;
+    font-weight: 500;
+    font-size: 1.05em;
+    color: #D5D6E2;
+}
+
+.project-item .mask {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    transform: translateY(0) rotateX(0);
+    transition: all 0.6s ease-in-out 0s;
+    color: #ccc;
+}
+
+.project-item .mask h3 {
+    padding-top: 35%;
+}
+
+.project-item:hover .mask {
+    transform: translateY(-100%) rotateX(90deg);
+    transform-origin: center bottom 0;
+    opacity: 0;
+}
+
+.project-item .mask-r {
+    background: #841138;
+}
+
+.project-item .mask-b {
+    background: #001459;
+}
+
+.project-item .over-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /*background: #222 url(../img/bg/bg06.png);*/
+    background: #222 url(../img/bg/black-skew.png);
+    text-align: center;
+    padding: 0 20px;
+    transition: all 0.60s ease-in-out 0s;
+}
+
+.project-item:hover .over-layer {
+    opacity: 1;
+}
+
+.project-item .title {
+    text-transform: capitalize;
+}
+
+.project-item .title, .project-item .description, .project-item .project-item-info, .project-item .social-links {
+    position: relative;
+    top: 20%;
+    line-height: 32px;
+}
+
+.layer-b {
+    /*color: #841138;*/
+    color: #c61f60;
+}
+
+.layer-r {
+    /*color: #001459;*/
+    color: #002abb;
+}
+
+.project-item .project-item-info:after, .project-item .description:after {
+    content: "";
+    width: 50%;
+    display: block;
+    margin: 10px auto 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.project-item .social-links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.project-item .social-links li {
+    margin: 10px;
+    display: inline-block;
+}
+
+.project-item a:hover {
+    color: #aaa;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .project-item {
+        /*margin-bottom: 20px;*/
+        font-size: 12px;
+    }
+}

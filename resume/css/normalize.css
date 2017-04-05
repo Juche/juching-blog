@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    background-size: cover;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: 16px Arial, Helvetica, sans-serif, Tahoma, Georgia, serif, Consolas, Verdana;
+}
+
+
+/*320
+412
+375
+360
+768
+*/
+
+
+/*div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li, tt,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td*/
+
+html, body, div, iframe, a, img, span, i, ul, li, h1, h2, h3, p, blockquote, pre, code, form, label, input, button, select, radio, checkbox, textarea, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+a:active, a:hover {
+    outline-width: 0;
+}
+
+
+/*chrome的inpit自带边框*/
+
+input, button, select, textarea, span {
+    outline: none
+}
+
+textarea {
+    resize: none
+}
+
+img {
+    border-style: none;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+canvas {
+    display: inline-block;
+}

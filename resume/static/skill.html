@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="../img/favicon_64X64.ico">
+	<title>Juching's skills</title>
+	<link rel="stylesheet" href="../css/normalize.css" />
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/jquery-ui-slider-pips.min.css">
+	<link rel="stylesheet" href="../css/resumeNav.css" />
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<link rel="stylesheet" href="../css/skill.css" />
+</head>
+
+<body>
+	<div class="container resume">
+
+		<nav class="resume-nav">
+			<a href="../index.html">Cover</a>
+			<a href="./baseInfo.html">BaseInfo</a>
+			<a class="current-nav" href="###">Skill</a>
+			<a href="./interfaceGUI.html">GUI</a>
+			<a href="./project.html">Project</a>
+		</nav>
+
+		<div id="slider">
+			<div class="slider-screen"></div>
+			<div class="slider-self-border"></div>
+			<div class="slider-self-line"></div>
+			<div class="skill-describe">
+				<h3>通过已下三种方式操作：</h3>
+				<ol>
+					<li>点击左侧关键词</li>
+					<li>点击滑槽</li>
+					<li>拖动滑块（Firefox下有bug待解决）</li>
+				</ol>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="../js/jquery-1.12.3.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/jquery-ui-slider-pips.js"></script>
+	<script>
+		// 初始化skill板块关键词和控制部分
+		var skils = ["","前端基础", "前端框架", "前端工具", "前端学习"];
+
+		$("#slider").find('.slider-screen').slider({
+
+			min: 0,
+			max: skils.length - 1,
+			orientation: "vertical"
+
+		}).slider("pips", {
+
+			rest: "label",
+			labels: skils
+
+		});
+
+		// skill板块交互
+		(function() {
+			// 基础：ui-slider-pip-1
+			// 库 ：ui-slider-pip-2
+			// 工具：ui-slider-pip-3
+			// 其他：ui-slider-pip-4
+			var
+				skillBag1=document.querySelector('.ui-slider-pip-1'),
+				skillBag2=document.querySelector('.ui-slider-pip-2'),
+				skillBag3=document.querySelector('.ui-slider-pip-3'),
+				skillBag4=document.querySelector('.ui-slider-pip-4'),
+				skillDescribe=document.querySelector('.skill-describe'),
+				slideBoxLine=document.querySelector('.slider-self-line');
+			var html='<h3>通过已下三种方式操作：</h3><ol><li>点击左侧关键词</li><li>点击滑槽</li><li>拖动滑块（Firefox下有bug待解决）</li></ol>';
+			var html1='<ul><li>掌握HTML、CSS、JavaScript等前端基础核心知识</li><li>熟悉W3C规范，能够编写语义化的HTML，做到表现与数据分离</li><li>DIV+CSS实现页面布局</li><li>会Flex、百分比、rem等自适应、响应式布局方案</li><li>能熟练布局PC端和移动端网页</li><li>熟悉原生JS,能实现简单的封装</li><li>掌握JSON/Ajax等技术</li><li>本地存储Sessionstorage/Localstorage/IndexDB</li></ul>';
+			var html2='<ul><li>会使用Vue框架</li><li>熟悉jQuery和Bootstrap等前端库/UI框架</li><li>了解CMD标准、能使用js模块化工具requirejs</li><li>了解过前端混合开发框架</li></ul>';
+			var html3='<ul><li>熟悉Node.js、Git</li><li>熟悉gulp 、webpack等前端构建工具</li><li>会使用Sass/Less等CSS预处理工具</li><li>会使用photoshop</li><li>熟悉Linux操作系统，能自己配置系统环境</li><li>使用Markdown/Gitbook记录笔记和编写文档</li><li>尝试过electron</li></ul>';
+			var html4='<ul><li>提升js能力</li><li>学习ES6/7标准</li><li>深入学习node/python</li><li>Hybrid App混合开发</li><li>性能优化</li></ul>';
+			function switchSkill () {
+				var
+					skill1=skillBag1.classList.contains('ui-slider-pip-selected'),
+					skill2=skillBag2.classList.contains('ui-slider-pip-selected'),
+					skill3=skillBag3.classList.contains('ui-slider-pip-selected'),
+					skill4=skillBag4.classList.contains('ui-slider-pip-selected');
+				switch (true) {
+					case skill1:
+						$('.skill-describe').html(html1);
+						skillDescribe.className='skill-describe';
+						slideBoxLine.className='slider-self-line';
+						skillDescribe.classList.add('white');
+						slideBoxLine.classList.add('white');
+						break;
+					case skill2:
+						$('.skill-describe').html(html2);
+						skillDescribe.className='skill-describe';
+						slideBoxLine.className='slider-self-line';
+						skillDescribe.classList.add('red');
+						slideBoxLine.classList.add('red');
+						break;
+					case skill3:
+						$('.skill-describe').html(html3);
+						skillDescribe.className='skill-describe';
+						slideBoxLine.className='slider-self-line';
+						skillDescribe.classList.add('green');
+						slideBoxLine.classList.add('green');
+						break;
+					case skill4:
+						$('.skill-describe').html(html4);
+						skillDescribe.className='skill-describe';
+						slideBoxLine.className='slider-self-line';
+						skillDescribe.classList.add('blue');
+						slideBoxLine.classList.add('blue');
+						break;
+					default:
+						$('.skill-describe').html(html);
+						skillDescribe.className='skill-describe';
+						slideBoxLine.className='slider-self-line';
+				}
+			}
+			// IE不支持ES6语法
+			// $('body').on('click', (e) => {
+			$('body').on('click', function(e){
+				switchSkill();
+			})
+			// 这个是间接监听滑轨的事件
+			// 详情看css文件说明
+			// $('.ui-slider-label').on('click', (e) => {
+			$('.ui-slider-label').on('click', function(e){
+				switchSkill();
+			})
+			// 滑块上今天不到父元素上绑定的监听事件/不知何故
+			// 单独加上
+			// $('.ui-slider-handle').on('click', (e) => {
+			$('.ui-slider-handle').on('click', function(e){
+				switchSkill();
+			})
+			// $('.ui-slider-pip').on('click', (e) => {
+			$('.ui-slider-pip').on('click', function(e){
+				switchSkill();
+			})
+		}());
+	</script>
+
+</body>
+
+</html>

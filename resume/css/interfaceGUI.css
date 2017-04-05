@@ -1,0 +1,125 @@
+html {
+    /*background: #222 url(../img/bg/black-skew.png);*/
+    background: url(../img/bg/bg06.png) #222;
+}
+
+
+/*设置泡泡样式*/
+
+#bubblesUp, #bubblesUp canvas {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.gui-slider {
+    position: relative;
+    margin: 120px auto 0;
+    width: 800px;
+}
+
+.gui-slider ul {
+    list-style: none;
+}
+
+.gui-slider ul li {
+    width: 800px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 480px;
+    background: #add8e6 center center;
+    background-size: cover;
+}
+
+.gui-slider ul li:nth-child(1) {
+    background-image: url(../img/kali01.png);
+}
+
+.gui-slider ul li:nth-child(2) {
+    background-image: url(../img/atomKW01.png);
+}
+
+.gui-slider ul li:nth-child(3) {
+    background-image: url(../img/atomW03.png);
+}
+
+.gui-slider ul li:nth-child(4) {
+    background-image: url(../img/atomDark.png);
+}
+
+.gui-slider ul li:nth-child(5) {
+    background-image: url(../img/ubuntuAtom.png);
+}
+
+.gui-slider ul li:nth-child(6) {
+    background-image: url(../img/vim01.png);
+}
+
+.gui-slider-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.gui-slider-arrow {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #c61f60;
+    color: #fff;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 860px) {
+    .gui-slider {
+        margin: 160px auto 0;
+        width: 700px;
+    }
+    .gui-slider ul li {
+        width: 700px;
+        height: 420px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gui-slider {
+        margin: 180px auto 0;
+        width: 600px;
+    }
+    .gui-slider ul li {
+        width: 600px;
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .gui-slider {
+        width: 500px;
+    }
+    .gui-slider ul li {
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .gui-slider {
+        width: 400px;
+    }
+    .gui-slider ul li {
+        width: 400px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .gui-slider {
+        width: 320px;
+    }
+    .gui-slider ul li {
+        width: 320px;
+        height: 192px;
+    }
+}
